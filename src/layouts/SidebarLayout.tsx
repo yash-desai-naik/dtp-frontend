@@ -14,7 +14,7 @@ export const SidebarLayout = ({
       <nav className="flex-shrink-0 flex-col w-64">
         {sidebarContent}
       </nav>
-      <div className="flex-1">
+      <div className="flex-1 bg-slate-400">
         {mainContent}
       </div>
     </div>
