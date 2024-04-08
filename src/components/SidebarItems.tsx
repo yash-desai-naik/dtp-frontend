@@ -24,7 +24,7 @@ export const SidebarItems = () => {
     return (
         <div className="bg-white px-5">
             <div className={`py-4 ${selectedItem === 'home' ? 'font-bold' : ''}`}>
-                <Link to="/" onClick={() => handleItemClick('home')}><FontAwesomeIcon icon={faHome} className="px-5" /> Home</Link>
+                <Link to="/home" onClick={() => handleItemClick('home')}><FontAwesomeIcon icon={faHome} className="px-5" /> Home</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'dashboard' ? 'font-bold' : ''}`}>
                 <Link to="/Dashboard" onClick={() => handleItemClick('dashboard')}><FontAwesomeIcon icon={faChartBar} className="px-5" /> Dashboard</Link>

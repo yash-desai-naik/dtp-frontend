@@ -15,20 +15,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-
+import loginPage from "./pages/loginPage";
 
 function App() {
 
   return (
     <>
+   {loginPage()}
+      
       <Router>
         <div>
-          <nav className="flex items-center gap-3 flex-wrap p-6">
-            <Link to="/">Home</Link>
+          {/* <nav className="flex items-center gap-3 flex-wrap p-6">
+            <Link to="/home">Home</Link>
             <Link to="/about">About</Link>
-          </nav>
-
+          </nav> */}
+          
           <Route exact path="/about">
             <SidebarLayout
               sidebarContent={
@@ -37,8 +38,7 @@ function App() {
               mainContent={<div>About..</div>}
             />
           </Route>
-
-          <Route exact path="/">
+          <Route exact path="/home">
             <SidebarLayout
               sidebarContent={
                 <SidebarItems />
