@@ -1,120 +1,68 @@
 import {
-  Link,
   Route,
   BrowserRouter as Router,
   Switch
 } from "react-router-dom";
-import { SidebarLayout } from "./layouts/SidebarLayout";
 import { SidebarItems } from "./components/SidebarItems";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import loginPage from "./pages/loginPage";
+import { SidebarLayout } from "./layouts/SidebarLayout";
+
+import Admin from './pages/admin/Admin';
+import Dashboard from "./pages/dashboard/Dashboard";
+import LoginPage from "./pages/login/LoginPage";
 
 function App() {
-
   return (
-    <>
-   {loginPage()}
-      
-      <Router>
-        <div>
-          {/* <nav className="flex items-center gap-3 flex-wrap p-6">
-            <Link to="/home">Home</Link>
-            <Link to="/about">About</Link>
-          </nav> */}
-          
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/login" component={LoginPage} />
           <Route exact path="/about">
             <SidebarLayout
-              sidebarContent={
-                <SidebarItems />
-              }
+              sidebarContent={<SidebarItems />}
               mainContent={<div>About..</div>}
             />
           </Route>
           <Route exact path="/home">
             <SidebarLayout
-              sidebarContent={
-                <SidebarItems />
-              }
+              sidebarContent={<SidebarItems />}
               mainContent={<div>Home..</div>}
             />
           </Route>
-          <Switch>
-            <Route exact path="/Dashboard">
-              <SidebarLayout
-                sidebarContent={
-                  <SidebarItems />
-                }
-                mainContent={<div>Dashboard..</div>}
-              />
-            </Route>
-            <Route exact path="/admin">
-              <SidebarLayout
-                sidebarContent={
-                  <SidebarItems />
-                }
-                mainContent={<div><b>User List</b>
-                  <Table>
-                    <TableCaption>A list of your recent invoices.</TableCaption>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-[100px]">Invoice</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Method</TableHead>
-                        <TableHead className="text-right">Amount</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell className="font-medium">INV001</TableCell>
-                        <TableCell>Paid</TableCell>
-                        <TableCell>Credit Card</TableCell>
-                        <TableCell className="text-right">$250.00</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-
-                </div>}
-              />
-            </Route>
-            <Route exact path="/Organizations">
-              <SidebarLayout
-                sidebarContent={
-                  <SidebarItems />
-                }
-                mainContent={<div>Organizations..</div>}
-              />
-            </Route>
-            <Route exact path="/Contract History">
-              <SidebarLayout
-                sidebarContent={
-                  <SidebarItems />
-                }
-                mainContent={<div>Contract History..</div>}
-              />
-            </Route>
-            <Route exact path="/User Profile">
-              <SidebarLayout
-                sidebarContent={
-                  <SidebarItems />
-                }
-                mainContent={<div>User Profile..</div>}
-              />
-            </Route>
-          </Switch>
-        </div>
-
-
-      </Router>
-    </>
-  )
+          <Route exact path="/dashboard">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<Dashboard />}
+            />
+          </Route>
+          <Route exact path="/admin">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<Admin />}
+            />
+          </Route>
+          <Route exact path="/organizations">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<div>Organizations..</div>}
+            />
+          </Route>
+          <Route exact path="/contract history">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<div>Contract History..</div>}
+            />
+          </Route>
+          <Route exact path="/user profile">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<div>User Profile..</div>}
+            />
+          </Route>
+          <Route path="*" component={LoginPage} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

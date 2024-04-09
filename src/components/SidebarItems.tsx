@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { faChartBar, faHistory, faHome, faUser, faUserShield, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartBar, faUsers, faHistory, faUser, faHome, faUserShield  } from '@fortawesome/free-solid-svg-icons';
+import { SetStateAction, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export const SidebarItems = () => {
     const location = useLocation();
     const [selectedItem, setSelectedItem] = useState(getSelectedItem(location.pathname));
 
-    function getSelectedItem(pathname) {
+    function getSelectedItem(pathname: string) {
         if (pathname === "/") return "home";
         if (pathname === "/Dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
@@ -17,7 +17,7 @@ export const SidebarItems = () => {
         return null;
     }
 
-    const handleItemClick = (itemName) => {
+    const handleItemClick = (itemName: SetStateAction<string | null>) => {
         setSelectedItem(itemName);
     };
 
