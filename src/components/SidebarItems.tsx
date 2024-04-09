@@ -9,11 +9,11 @@ export const SidebarItems = () => {
 
     function getSelectedItem(pathname: string) {
         if (pathname === "/") return "home";
-        if (pathname === "/Dashboard") return "dashboard";
+        if (pathname === "/dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
-        if (pathname === "/Organizations") return "organizations";
-        if (pathname === "/Contract History") return "contractHistory";
-        if (pathname === "/User Profile") return "userProfile";
+        if (pathname === "/organizations") return "organizations";
+        if (pathname === "/contract history") return "contractHistory";
+        if (pathname === "/user profile") return "userProfile";
         return null;
     }
 
@@ -27,19 +27,19 @@ export const SidebarItems = () => {
                 <Link to="/home" onClick={() => handleItemClick('home')}><FontAwesomeIcon icon={faHome} className="px-5" /> Home</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'dashboard' ? 'font-bold' : ''}`}>
-                <Link to="/Dashboard" onClick={() => handleItemClick('dashboard')}><FontAwesomeIcon icon={faChartBar} className="px-5" /> Dashboard</Link>
+                <Link to="/dashboard" onClick={() => handleItemClick('dashboard')}><FontAwesomeIcon icon={faChartBar} className="px-5" /> Dashboard</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'admin' ? 'font-bold' : ''}`}>
                 <Link to="/admin" onClick={() => handleItemClick('admin')}><FontAwesomeIcon icon={faUserShield} className="px-5" /> Admin</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'organizations' ? 'font-bold' : ''}`}>
-                <Link to="/Organizations" onClick={() => handleItemClick('organizations')}><FontAwesomeIcon icon={faUsers} className="px-5" /> Organizations</Link>
+                <Link to="/organizations" onClick={() => handleItemClick('organizations')}><FontAwesomeIcon icon={faUsers} className="px-5" /> Organizations</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'contractHistory' ? 'font-bold' : ''}`}>
-                <Link to="/Contract History" onClick={() => handleItemClick('contractHistory')}><FontAwesomeIcon icon={faHistory} className="px-5" /> Contract History</Link>        
+                <Link to="/contract history" onClick={() => handleItemClick('contractHistory')}><FontAwesomeIcon icon={faHistory} className="px-5" /> Contract History</Link>        
             </div>
             <div className={`py-4 ${selectedItem === 'userProfile' ? 'font-bold' : ''}`}>
-                <Link to="/User Profile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
+                <Link to="/user profile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
             </div>
         </div>
     );
