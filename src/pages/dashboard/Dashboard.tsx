@@ -1,17 +1,15 @@
 import AddLotDialog from "@/components/AddLotDialog";
+import ComboInput from "@/components/ComboInput";
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
+import { MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
+    DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-
-import { MoreHorizontal } from "lucide-react";
 
 
 function Dashboard() {
@@ -27,15 +25,13 @@ function Dashboard() {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>Home</DropdownMenuLabel>
-                    <DropdownMenuItem>Admin</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>User Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Organization</DropdownMenuItem>
+                    <DropdownMenuLabel><ComboInput buttonName="Upload Bill" title="Upload Bill" label="Bill" submitButton="Submit Bill" /></DropdownMenuLabel>
+                    <DropdownMenuLabel><ComboInput buttonName="Upload ProofOfDelivery" title="Upload ProofOfDelivery" label="ProofOfDelivery" submitButton="Submit ProofOfDelivery" /></DropdownMenuLabel>
+                    <DropdownMenuLabel><ComboInput buttonName="Upload Invoice" title="Upload Invoice" label="Upload Invoice" submitButton="Submit Invoice" /></DropdownMenuLabel>
                 </DropdownMenuContent>
             </DropdownMenu>
         ), (
-                <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+                <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">
                     View
                 </Button>
             )]
@@ -49,7 +45,7 @@ function Dashboard() {
             <div className="flex justify-between items-center mb-4 py-5 px-10">
                 <b>Add Lot</b>
                 <div>
-                    <AddLotDialog label="Add Lot" />
+                    <AddLotDialog buttonName="Add Lot" />
                 </div>
             </div>
             <div>

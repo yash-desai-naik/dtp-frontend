@@ -22,7 +22,7 @@ function Admin() {
       <div className="flex justify-between items-center mb-4 py-5 px-10">
         <b>User List</b>
         <div>
-          <AddLotDialog label="Add User" />
+          <AddLotDialog buttonName="Add User" />
         </div>
       </div>
       <div>

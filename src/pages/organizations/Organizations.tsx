@@ -12,7 +12,7 @@ function Organization() {
       <div className="flex justify-between items-center mb-4 py-5 px-10">
         <b>Organization List</b>
         <div>
-          <AddLotDialog label="Add Organization" />
+          <AddLotDialog buttonName="Add Organization" />
         </div>
       </div>
     </div>
