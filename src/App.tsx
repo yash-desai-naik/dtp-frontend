@@ -9,6 +9,7 @@ import { SidebarLayout } from "./layouts/SidebarLayout";
 import Admin from './pages/admin/Admin';
 import Dashboard from "./pages/dashboard/Dashboard";
 import LoginPage from "./pages/login/LoginPage";
+import Organization from "./pages/organizations/Organizations";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
           <Route exact path="/organizations">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
-              mainContent={<div>Organizations..</div>}
+              mainContent={<Organization />}
             />
           </Route>
           <Route exact path="/contract history">
