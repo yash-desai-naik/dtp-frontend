@@ -19,7 +19,7 @@ function Admin() {
       <div>
         <PageHeader title="ADMIN" />
       </div>
-      <div className="flex justify-between items-center mb-4 py-5 px-10">
+      <div className="flex justify-between items-center mb-1 py-4 px-10">
         <b>User List</b>
         <div>
           <AddLotDialog buttonName="Add User" />

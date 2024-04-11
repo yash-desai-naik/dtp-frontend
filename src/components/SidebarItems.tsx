@@ -12,8 +12,8 @@ export const SidebarItems = () => {
         if (pathname === "/dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
         if (pathname === "/organizations") return "organizations";
-        if (pathname === "/contract history") return "contractHistory";
-        if (pathname === "/user profile") return "userProfile";
+        if (pathname === "/contracthistory") return "contractHistory";
+        if (pathname === "/userprofile") return "userProfile";
         return null;
     }
 
@@ -36,10 +36,10 @@ export const SidebarItems = () => {
                 <Link to="/organizations" onClick={() => handleItemClick('organizations')}><FontAwesomeIcon icon={faUsers} className="px-5" /> Organizations</Link>
             </div>
             <div className={`py-4 ${selectedItem === 'contractHistory' ? 'font-bold' : ''}`}>
-                <Link to="/contract history" onClick={() => handleItemClick('contractHistory')}><FontAwesomeIcon icon={faHistory} className="px-5" /> Contract History</Link>        
+                <Link to="/contracthistory" onClick={() => handleItemClick('contractHistory')}><FontAwesomeIcon icon={faHistory} className="px-5" /> Contract History</Link>        
             </div>
             <div className={`py-4 ${selectedItem === 'userProfile' ? 'font-bold' : ''}`}>
-                <Link to="/user profile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
+                <Link to="/userprofile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
             </div>
         </div>
     );

@@ -15,16 +15,18 @@ function ComboInput({ buttonName, title, label, submitButton }) {
 
     return (
         <Dialog>
+
             <DialogTrigger asChild>
-                <Button variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">{buttonName}</Button>
+                <Label className="flex items-center cursor-pointer py-1"> <span>{buttonName}</span></Label>
             </DialogTrigger>
+
             <DialogContent className="sm:max-w-[425px] bg-white">
                 <DialogHeader>
                     <DialogTitle>{title}</DialogTitle>
                 </DialogHeader>
                 <div>
                     <div>
-                    <Label htmlFor="fileInput">{label}</Label>
+                        <Label htmlFor="fileInput">{label}</Label>
                         <div className="grid w-full max-w-sm items-center gap-1.5">
                             <Input id="fileInput" type="file" />
                         </div>
