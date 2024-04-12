@@ -10,7 +10,6 @@ export const SidebarLayout = ({
     <>
       
     <div className="flex">
-      
       <nav className="flex-shrink-0 flex-col w-64">
         {sidebarContent}
       </nav>
