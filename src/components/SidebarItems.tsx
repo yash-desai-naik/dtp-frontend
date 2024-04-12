@@ -1,4 +1,4 @@
-import { faChartBar, faHistory, faHome, faUser, faUserShield, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faChartBar, faHistory, faHome, faUser, faUserShield, faUsers, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SetStateAction, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -9,6 +9,7 @@ export const SidebarItems = () => {
 
     function getSelectedItem(pathname: string) {
         if (pathname === "/") return "home";
+        if (pathname === "/about") return "about";
         if (pathname === "/dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
         if (pathname === "/organizations") return "organizations";
@@ -40,6 +41,9 @@ export const SidebarItems = () => {
             </div>
             <div className={`py-4 ${selectedItem === 'userProfile' ? 'font-bold' : ''}`}>
                 <Link to="/userprofile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
+            </div>
+            <div className={`py-4 ${selectedItem === 'about' ? 'font-bold' : ''}`}>
+                <Link to="/about" onClick={() => handleItemClick('about')}><FontAwesomeIcon icon={faInfoCircle} className="px-5" /> About </Link>        
             </div>
         </div>
     );

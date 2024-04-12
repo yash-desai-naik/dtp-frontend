@@ -1,10 +1,14 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { SidebarItems } from "./components/SidebarItems";
 import { SidebarLayout } from "./layouts/SidebarLayout";
+import About from "./pages/about/About";
 import Admin from './pages/admin/Admin';
+import ContractHistory from "./pages/contracthistory/ContractHistory";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Home from "./pages/home/Home";
 import LoginPage from "./pages/login/LoginPage";
 import Organization from "./pages/organizations/Organizations";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -15,13 +19,13 @@ function App() {
           <Route exact path="/about">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
-              mainContent={<div>About..</div>}
+              mainContent={<About />}
             />
           </Route>
           <Route exact path="/home">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
-              mainContent={<div>Home..</div>}
+              mainContent={<Home />}
             />
           </Route>
           <Route exact path="/dashboard">
@@ -45,13 +49,13 @@ function App() {
           <Route exact path="/contracthistory">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
-              mainContent={<div>Contract History..</div>}
+              mainContent={<ContractHistory />}
             />
           </Route>
           <Route exact path="/userprofile">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
-              mainContent={<div>User Profile..</div>}
+              mainContent={<Profile />}
             />
           </Route>
           <Route path="*" component={LoginPage} />
