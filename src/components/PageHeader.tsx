@@ -1,25 +1,29 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { FaSearch, FaSignOutAlt, FaUser } from "react-icons/fa";
-import { History, useHistory } from "react-router-dom";
+import { useState } from "react";
+import { FaSearch, FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-
 function PageHeader({ title }) {
-    const history = useHistory<History>();
-    const logout = useHistory<History>();
+    const history = useHistory();
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
+
     const handleProfileClick = () => {
         // Redirect to profile page
         history.push('/userprofile');
     };
 
+    const handleLoginClick = () => {
+        // Perform login actions
+        setIsLoggedIn(true);
+        history.push('/login');
+    };
+
     const handleLogoutClick = () => {
-        // Perform logout actions, e.g., clear session, remove tokens, etc.
-        // Redirect to login page or homepage after logout
-        // For example:
-        // clearUserSession(); // Implement your logout logic
-        // history.push('/login'); // Redirect to login page
-        logout.push('/login');
+        // Perform logout actions
+        setIsLoggedIn(false);
+        history.push('/login'); // Redirect to login page after logout
     };
 
     return (
@@ -38,20 +42,31 @@ function PageHeader({ title }) {
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="shadow-sm bg-white px-1 py-1">
-                            <DropdownMenuLabel>
-                                <Button className="flex items-center" onClick={handleProfileClick}>
-                                    <FaUser className="text-black cursor-pointer" />
-                                    <span className="ml-2">User Profile</span>
-                                </Button>
-                            </DropdownMenuLabel>
-                            <DropdownMenuLabel>
-                                <Button className="flex items-center" onClick={handleLogoutClick}>
-                                    <FaSignOutAlt className="text-black cursor-pointer" />
-                                    <span className="ml-2">Logout</span>
-                                </Button>
-                            </DropdownMenuLabel>
+                            {!isLoggedIn && (
+                                <DropdownMenuLabel>
+                                    <Button className="flex items-center" onClick={handleLoginClick}>
+                                        <FaSignInAlt className="text-black cursor-pointer" />
+                                        <span className="ml-2">SignIn</span>
+                                    </Button>
+                                </DropdownMenuLabel>
+                            )}
+                            {isLoggedIn && (
+                                <>
+                                    <DropdownMenuLabel>
+                                        <Button className="flex items-center" onClick={handleProfileClick}>
+                                            <FaUser className="text-black cursor-pointer" />
+                                            <span className="ml-2">User Profile</span>
+                                        </Button>
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuLabel>
+                                        <Button className="flex items-center" onClick={handleLogoutClick}>
+                                            <FaSignOutAlt className="text-black cursor-pointer" />
+                                            <span className="ml-2">Logout</span>
+                                        </Button>
+                                    </DropdownMenuLabel>
+                                </>
+                            )}
                         </DropdownMenuContent>
-
                     </DropdownMenu>
                 </div>
             </div>

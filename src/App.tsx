@@ -5,10 +5,10 @@ import About from "./pages/about/About";
 import Admin from './pages/admin/Admin';
 import ContractHistory from "./pages/contracthistory/ContractHistory";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Home from "./pages/home/Home";
 import LoginPage from "./pages/login/LoginPage";
 import Organization from "./pages/organizations/Organizations";
 import Profile from "./pages/profile/Profile";
+
 
 function App() {
   return (
@@ -20,12 +20,6 @@ function App() {
             <SidebarLayout
               sidebarContent={<SidebarItems />}
               mainContent={<About />}
-            />
-          </Route>
-          <Route exact path="/home">
-            <SidebarLayout
-              sidebarContent={<SidebarItems />}
-              mainContent={<Home />}
             />
           </Route>
           <Route exact path="/dashboard">

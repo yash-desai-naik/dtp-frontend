@@ -1,4 +1,4 @@
-import AddLotDialog from "@/components/AddLotDialog";
+import AddUser from "@/components/AddUser";
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ function Admin() {
       <div className="flex justify-between items-center mb-1 py-4 px-10">
         <b>User List</b>
         <div>
-          <AddLotDialog buttonName="Add User" />
+          <AddUser buttonName="Add User" />
         </div>
       </div>
       <div>

@@ -1,6 +1,5 @@
-import { faChartBar, faHistory, faHome, faUser, faUserShield, faUsers, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SetStateAction, useState } from "react";
+import { FaChartBar, FaHistory, FaInfoCircle, FaUser, FaUserShield, FaUsers } from 'react-icons/fa';
 import { Link, useLocation } from "react-router-dom";
 
 export const SidebarItems = () => {
@@ -8,7 +7,6 @@ export const SidebarItems = () => {
     const [selectedItem, setSelectedItem] = useState(getSelectedItem(location.pathname));
 
     function getSelectedItem(pathname: string) {
-        if (pathname === "/") return "home";
         if (pathname === "/about") return "about";
         if (pathname === "/dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
@@ -24,26 +22,23 @@ export const SidebarItems = () => {
 
     return (
         <div className="bg-white px-5">
-            <div className={`py-4 ${selectedItem === 'home' ? 'font-bold' : ''}`}>
-                <Link to="/home" onClick={() => handleItemClick('home')}><FontAwesomeIcon icon={faHome} className="px-5" /> Home</Link>
-            </div>
             <div className={`py-4 ${selectedItem === 'dashboard' ? 'font-bold' : ''}`}>
-                <Link to="/dashboard" onClick={() => handleItemClick('dashboard')}><FontAwesomeIcon icon={faChartBar} className="px-5" /> Dashboard</Link>
+                <Link to="/dashboard" onClick={() => handleItemClick('dashboard')}><span className='flex items-center gap-3'><FaChartBar /> Dashboard</span></Link>
             </div>
             <div className={`py-4 ${selectedItem === 'admin' ? 'font-bold' : ''}`}>
-                <Link to="/admin" onClick={() => handleItemClick('admin')}><FontAwesomeIcon icon={faUserShield} className="px-5" /> Admin</Link>
+                <Link to="/admin" onClick={() => handleItemClick('admin')}><span className='flex items-center gap-3'><FaUser /> Admin</span></Link>
             </div>
             <div className={`py-4 ${selectedItem === 'organizations' ? 'font-bold' : ''}`}>
-                <Link to="/organizations" onClick={() => handleItemClick('organizations')}><FontAwesomeIcon icon={faUsers} className="px-5" /> Organizations</Link>
+                <Link to="/organizations" onClick={() => handleItemClick('organizations')}><span className='flex items-center gap-3'><FaUsers /> Organizations</span></Link>
             </div>
             <div className={`py-4 ${selectedItem === 'contractHistory' ? 'font-bold' : ''}`}>
-                <Link to="/contracthistory" onClick={() => handleItemClick('contractHistory')}><FontAwesomeIcon icon={faHistory} className="px-5" /> Contract History</Link>        
+                <Link to="/contracthistory" onClick={() => handleItemClick('contractHistory')}><span className='flex items-center gap-3'><FaHistory /> Contract History</span></Link>        
             </div>
             <div className={`py-4 ${selectedItem === 'userProfile' ? 'font-bold' : ''}`}>
-                <Link to="/userprofile" onClick={() => handleItemClick('userProfile')}><FontAwesomeIcon icon={faUser} className="px-5" /> User Profile</Link>        
+                <Link to="/userprofile" onClick={() => handleItemClick('userProfile')}><span className='flex items-center gap-3'><FaUserShield/> User Profile</span></Link>        
             </div>
             <div className={`py-4 ${selectedItem === 'about' ? 'font-bold' : ''}`}>
-                <Link to="/about" onClick={() => handleItemClick('about')}><FontAwesomeIcon icon={faInfoCircle} className="px-5" /> About </Link>        
+                <Link to="/about" onClick={() => handleItemClick('about')}><span className='flex items-center gap-3'><FaInfoCircle/> About </span></Link>        
             </div>
         </div>
     );

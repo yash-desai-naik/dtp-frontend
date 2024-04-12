@@ -2,6 +2,7 @@ import AddLotDialog from "@/components/AddLotDialog";
 import ComboInput from "@/components/ComboInput";
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
+import View from "@/components/View";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
@@ -26,9 +27,7 @@ function Dashboard() {
                 </DropdownMenuContent>
             </DropdownMenu>
         ), (
-                <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">
-                    View
-                </Button>
+                <View buttonName="View" />
             )],
             ["Product 1", "pradip", "My order", (
                 <DropdownMenu>
@@ -45,9 +44,7 @@ function Dashboard() {
                     </DropdownMenuContent>
                 </DropdownMenu>
             ), (
-                    <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">
-                        View
-                    </Button>
+                <View buttonName="View" />
                 )],
                 ["Product 1", "pradip", "My order", (
                     <DropdownMenu>
@@ -64,9 +61,7 @@ function Dashboard() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 ), (
-                        <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">
-                            View
-                        </Button>
+                    <View buttonName="View" />
                     )],
     ];
 
