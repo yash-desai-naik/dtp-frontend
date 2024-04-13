@@ -1,7 +1,8 @@
 import { Badge } from "./ui/badge";
 import { Label } from "./ui/label";
 
-function ViewLabel({ name, label }) {
+function ViewLabel({ name, label }:{name:string, label:string}) {
+
     return (
         <div className="grid gap-4 py-1">
             <div className="flex items-center gap-4">

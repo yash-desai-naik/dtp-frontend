@@ -1,10 +1,38 @@
+import { useState } from 'react';
 import { Button } from "./ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
+import { ReactNode } from 'react';
 
-function CustomTable({ headers, data }) {
+type TableDataCell = string | ReactNode;
+type TableDataRow = TableDataCell[];
+type TableData = TableDataRow[];
+
+interface CustomTableProps {
+    headers: string[];
+    data: TableData;
+  }
+
+function CustomTable({ headers, data }:CustomTableProps) {
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const rowsPerPage = 5;
+    const totalPages = Math.ceil(data.length / rowsPerPage);
+
+    const startIndex = (currentPage - 1) * rowsPerPage;
+    const endIndex = Math.min(startIndex + rowsPerPage, data.length);
+    const currentRows = data.slice(startIndex, endIndex);
+
+    const handlePreviousPage = () => {
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    };
+
+    const handleNextPage = () => {
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    };
+
     return (
         <>
-            <Table className="pb-2 border-b border-gray-300">
+            <Table className="pb-2 border-b border-gray-300 bg-white">
                 <TableHeader className="bg-slate-200">
                     <TableRow>
                         {headers.map((header, index) => (
@@ -13,7 +41,7 @@ function CustomTable({ headers, data }) {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {data.map((row, rowIndex) => (
+                    {currentRows.map((row, rowIndex) => (
                         <TableRow key={rowIndex}>
                             {row.map((cell, cellIndex) => (
                                 <TableCell key={cellIndex}>{cell}</TableCell>
@@ -22,20 +50,24 @@ function CustomTable({ headers, data }) {
                     ))}
                 </TableBody>
             </Table>
-            <div className="flex items-center justify-end space-x-2 py-5 px-10">
-                <div className="flex-1 text-sm text-muted-foreground">
-                    0 of 5 row(s) selected.
+            <div className="flex items-center justify-between space-x-2 py-5 px-10">
+                <div className="text-sm text-muted-foreground px-2">
+                    {startIndex + 1} - {endIndex} of {data.length} row(s) selected.
                 </div>
-                <div className="space-x-2 px-10">
+                <div className="space-x-2">
                     <Button
                         variant="outline"
                         size="sm"
+                        onClick={handlePreviousPage}
+                        disabled={currentPage === 1}
                     >
                         Previous
                     </Button>
                     <Button
                         variant="outline"
                         size="sm"
+                        onClick={handleNextPage}
+                        disabled={currentPage === totalPages}
                     >
                         Next
                     </Button>

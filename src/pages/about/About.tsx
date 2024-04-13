@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 
 function About() {
@@ -7,6 +8,9 @@ function About() {
     <div>
       <div>
         <PageHeader title="ABOUT" />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

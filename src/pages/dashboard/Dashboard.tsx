@@ -1,12 +1,12 @@
 import AddLotDialog from "@/components/AddLotDialog";
 import ComboInput from "@/components/ComboInput";
 import CustomTable from "@/components/CustomTable";
+import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import View from "@/components/View";
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
-
 
 function Dashboard() {
 
@@ -67,20 +67,25 @@ function Dashboard() {
 
     return (
         <div>
+          <div>
+            <PageHeader title="DASHBOARD" />
+          </div>
+          <div className="bg-white border border-white rounded-lg py-4 px-4 m-2" style={{ borderRadius: '0.5rem' }}>
+            <div className="flex justify-between items-center mb-1 py-4 px-10 bg-white">
+              <b>Add Lot</b>
+              <div>
+                <AddLotDialog buttonName="Add Lot" />
+              </div>
+            </div>
             <div>
-                <PageHeader title="DASHBOARD" />
+              <CustomTable headers={tableHeaders} data={tableData} />
             </div>
-            <div className="flex justify-between items-center mb-1 py-4 px-10">
-                <b>Add Lot</b>
-                <div>
-                    <AddLotDialog buttonName="Add Lot" />
-                </div>
-            </div>
-            <div>
-                <CustomTable headers={tableHeaders} data={tableData} />
-            </div>
+          </div>
+          <div>
+            <Footer />
+          </div>
         </div>
-    );
+      );
 }
 
 export default Dashboard;

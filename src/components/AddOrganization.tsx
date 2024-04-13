@@ -37,18 +37,9 @@ const frameworks = [
     },
 ];
 
-function AddOrganization({ buttonName }) {
+function AddOrganization({ buttonName }:{buttonName: string}) {
     const [open3, setOpen3] = useState(false);
     const [value3, setValue3] = useState("");
-
-    // const handleSubmit = () => {
-    //     // Handle submission
-    // };
-
-    // const handleCancel = () => {
-    //     setOpen(false); // Close the dialog
-    //     // Additional cancellation logic can be added here
-    // };
 
     return (
         <Dialog>

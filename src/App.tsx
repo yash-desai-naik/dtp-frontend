@@ -8,7 +8,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import LoginPage from "./pages/login/LoginPage";
 import Organization from "./pages/organizations/Organizations";
 import Profile from "./pages/profile/Profile";
-
+import Verify from "./pages/verify/VerifyPage";
 
 function App() {
   return (
@@ -50,6 +50,12 @@ function App() {
             <SidebarLayout
               sidebarContent={<SidebarItems />}
               mainContent={<Profile />}
+            />
+          </Route>
+          <Route exact path="/verify">
+            <SidebarLayout
+              sidebarContent={<SidebarItems />}
+              mainContent={<Verify />}
             />
           </Route>
           <Route path="*" component={LoginPage} />

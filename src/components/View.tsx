@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ViewLabel from "./ViewLabel";
 
-function View({ buttonName }) {
+function View({ buttonName }:{buttonName:string}) {
 
     return (
         <Dialog>

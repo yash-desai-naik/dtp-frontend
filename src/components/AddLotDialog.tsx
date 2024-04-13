@@ -37,22 +37,13 @@ const frameworks = [
     },
 ];
 
-function AddLotDialog({ buttonName }) {
+function AddLotDialog({ buttonName }:{buttonName: string}) {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
     const [value1, setValue1] = useState("");
     const [value2, setValue2] = useState("");
     const [value3, setValue3] = useState("");
-
-    // const handleSubmit = () => {
-    //     // Handle submission
-    // };
-
-    // const handleCancel = () => {
-    //     setOpen(false); // Close the dialog
-    //     // Additional cancellation logic can be added here
-    // };
 
     return (
         <Dialog>

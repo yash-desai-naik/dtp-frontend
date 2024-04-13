@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-function PageHeader({ title }) {
+function PageHeader({ title }:{title:string}) {
     const history = useHistory();
     const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
 
@@ -27,7 +27,7 @@ function PageHeader({ title }) {
     };
 
     return (
-        <div className="flex items-center justify-between bg-gradient-to-r from-sky-200 to-blue-700 py-10">
+        <div className="flex items-center justify-between bg-gradient-to-r from-sky-400 to-blue-700 py-10">
             <h1 className="text-lg font-bold text-white px-5">{title}</h1>
             <div className="flex items-center space-x-3 px-2">
                 <div className="relative rounded-full ">

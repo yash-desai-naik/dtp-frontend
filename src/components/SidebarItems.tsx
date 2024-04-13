@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { FaChartBar, FaHistory, FaInfoCircle, FaUser, FaUserShield, FaUsers } from 'react-icons/fa';
+import { FaChartBar, FaHistory, FaInfoCircle, FaUser, FaUserShield, FaUsers, FaCheckCircle } from 'react-icons/fa';
 import { Link, useLocation } from "react-router-dom";
 
 export const SidebarItems = () => {
@@ -13,6 +13,7 @@ export const SidebarItems = () => {
         if (pathname === "/organizations") return "organizations";
         if (pathname === "/contracthistory") return "contractHistory";
         if (pathname === "/userprofile") return "userProfile";
+        if (pathname === "/verify") return "verify";
         return null;
     }
 
@@ -39,6 +40,9 @@ export const SidebarItems = () => {
             </div>
             <div className={`py-4 ${selectedItem === 'about' ? 'font-bold' : ''}`}>
                 <Link to="/about" onClick={() => handleItemClick('about')}><span className='flex items-center gap-3'><FaInfoCircle/> About </span></Link>        
+            </div>
+            <div className={`py-4 ${selectedItem === 'verify' ? 'font-bold' : ''}`}>
+                <Link to="/verify" onClick={() => handleItemClick('verify')}><span className='flex items-center gap-3'><FaCheckCircle/> Verify </span></Link>        
             </div>
         </div>
     );
