@@ -9,7 +9,7 @@ function Admin() {
 
   const [users, setUsers] = useState([
     { username: "PRADIP", email: "pradip@123", status: "active", department: "Any department" },
-    { username: "CHIRAG", email: "Chirag@123", status: "inactive", department: "Other department" },
+    { username: "CHIRAG", email: "Chirag@123", status: "active", department: "Other department" },
     { username: "3", email: "3@123", status: "active", department: "Any department" },
     { username: "4", email: "pradip@123", status: "active", department: "Any department" },
     { username: "5", email: "pradip@123", status: "active", department: "Any department" },
