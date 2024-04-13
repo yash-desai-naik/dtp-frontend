@@ -24,6 +24,7 @@ function Organization() {
             <AddOrganization buttonName="Add Organization" />
           </div>
         </div>
+        <hr className="border-t border-gray-300 my-4" />
         <div>
           <CustomTable headers={tableHeaders} data={tableData} />
         </div>
