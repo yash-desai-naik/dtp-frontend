@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "./ui/input";
 
 
-function ComboInput({ buttonName, title, label, submitButton }) {
+function ComboInput({ buttonName, title, label, submitButton }:{buttonName:string, title:string, label:string, submitButton:string}) {
 
     const handleSubmit = () => {
         // Handle submission

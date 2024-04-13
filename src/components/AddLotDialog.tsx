@@ -37,7 +37,7 @@ const frameworks = [
     },
 ];
 
-function AddLotDialog({ buttonName }) {
+function AddLotDialog({ buttonName }:{buttonName: string}) {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
@@ -45,21 +45,12 @@ function AddLotDialog({ buttonName }) {
     const [value2, setValue2] = useState("");
     const [value3, setValue3] = useState("");
 
-    // const handleSubmit = () => {
-    //     // Handle submission
-    // };
-
-    // const handleCancel = () => {
-    //     setOpen(false); // Close the dialog
-    //     // Additional cancellation logic can be added here
-    // };
-
     return (
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">{buttonName}</Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] bg-white">
+            <DialogContent className="sm:max-w-[800px] bg-white">
                 <DialogHeader>
                     <DialogTitle>Create Lot</DialogTitle>
                 </DialogHeader>
@@ -74,7 +65,7 @@ function AddLotDialog({ buttonName }) {
                                     variant="outline"
                                     role="combobox"
                                     aria-expanded={open1}
-                                    className="w-[200px] justify-between"
+                                    className="w-[500px] justify-between"
                                 >
                                     {value1
                                         ? frameworks.find((framework) => framework.value === value1)?.label
@@ -82,9 +73,9 @@ function AddLotDialog({ buttonName }) {
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent className="w-[200px] p-0 bg-slate-200">
+                            <PopoverContent className="w-[500px] p-0 bg-slate-200">
                                 <Command>
-                                    <CommandInput placeholder="Search..." />
+                                    <CommandInput placeholder="Search..." className="w-[500px]"/>
                                     <CommandEmpty>No data found.</CommandEmpty>
                                     <CommandGroup>
                                         {frameworks.map((framework) => (
@@ -124,7 +115,7 @@ function AddLotDialog({ buttonName }) {
                                     variant="outline"
                                     role="combobox"
                                     aria-expanded={open2}
-                                    className="w-[200px] justify-between"
+                                    className="w-[500px] justify-between"
                                 >
                                     {value2
                                         ? frameworks.find((framework) => framework.value === value2)?.label
@@ -132,9 +123,9 @@ function AddLotDialog({ buttonName }) {
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent className="w-[200px] p-0 bg-slate-200">
+                            <PopoverContent className="w-[500px] p-0 bg-slate-200">
                                 <Command>
-                                    <CommandInput placeholder="Search..." />
+                                    <CommandInput placeholder="Search..." className="w-[500px]" />
                                     <CommandEmpty>No data found.</CommandEmpty>
                                     <CommandGroup>
                                         {frameworks.map((framework) => (
@@ -174,7 +165,7 @@ function AddLotDialog({ buttonName }) {
                                     variant="outline"
                                     role="combobox"
                                     aria-expanded={open3}
-                                    className="w-[200px] justify-between"
+                                    className="w-[500px] justify-between"
                                 >
                                     {value3
                                         ? frameworks.find((framework) => framework.value === value3)?.label
@@ -182,9 +173,9 @@ function AddLotDialog({ buttonName }) {
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent className="w-[200px] p-0 bg-slate-200">
+                            <PopoverContent className="w-[500px] p-0 bg-slate-200">
                                 <Command>
-                                    <CommandInput placeholder="Search..." />
+                                    <CommandInput placeholder="Search..." className="w-[500px]" />
                                     <CommandEmpty>No data found.</CommandEmpty>
                                     <CommandGroup>
                                         {frameworks.map((framework) => (
@@ -218,7 +209,7 @@ function AddLotDialog({ buttonName }) {
                         <Label htmlFor="name" className="text-right">
                             Select Excel
                         </Label>
-                        <Input id="file" type="file" className="w-[200px]" />
+                        <Input id="file" type="file" className="w-[500px]" />
                     </div>
                 </div>
                 <DialogFooter>

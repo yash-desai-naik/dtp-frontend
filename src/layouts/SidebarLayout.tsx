@@ -1,4 +1,3 @@
-// use tailwindcss
 export const SidebarLayout = ({
   sidebarContent,
   mainContent
@@ -8,16 +7,14 @@ export const SidebarLayout = ({
 }) => {
   return (
     <>
-      
     <div className="flex">
-      <nav className="flex-shrink-0 flex-col w-64">
+      <nav className="flex-shrink-0 flex-col w-60 bg-white fixed h-full overflow-y-auto">
         {sidebarContent}
       </nav>
-      <div className="flex-1">
+      <div className="flex-1 ml-60">
         {mainContent}
       </div>
     </div>
     </>
   )
 }
-
