@@ -1,28 +1,29 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { useState } from "react";
-import { FaSearch, FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { FaSearch, FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { useStore } from '@/store/useStore';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from './ui/dropdown-menu';
 
-function PageHeader({ title }:{title:string}) {
+function PageHeader({ title }: { title: string }) {
     const history = useHistory();
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
+    const isLoggedIn = useStore(state => state.isLoggedIn);
+    const login = useStore(state => state.login);
+    const logout = useStore(state => state.logout);
 
     const handleProfileClick = () => {
         // Redirect to profile page
-        history.push('/userprofile');
+        <a href="#" />
     };
 
     const handleLoginClick = () => {
         // Perform login actions
-        setIsLoggedIn(true);
-        history.push('/login');
+        login('example@email.com', 'password');
     };
 
     const handleLogoutClick = () => {
         // Perform logout actions
-        setIsLoggedIn(false);
+        logout();
         history.push('/login'); // Redirect to login page after logout
     };
 
@@ -35,39 +36,33 @@ function PageHeader({ title }:{title:string}) {
                     <Input className="pl-10 bg-transparent rounded-full focus:outline-none border border-white" placeholder="Search..." style={{ color: 'white' }} />
                 </div>
                 <div className="px-3 rounded-full p-1 border border-white">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="h-8 w-8 p-0">
-                                <FaUser className="text-white text-xl cursor-pointer" />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="shadow-sm bg-white px-1 py-1">
-                            {!isLoggedIn && (
+                    {!isLoggedIn ? (
+                        <Button variant="ghost" className="h-8 w-8 p-0" onClick={handleLoginClick}>
+                            <FaSignInAlt className="text-white text-xl cursor-pointer" />
+                        </Button>
+                    ) : (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="ghost" className="h-8 w-8 p-0">
+                                    <FaUser className="text-white text-xl cursor-pointer" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="shadow-sm bg-white px-1 py-1">
                                 <DropdownMenuLabel>
-                                    <Button className="flex items-center" onClick={handleLoginClick}>
-                                        <FaSignInAlt className="text-black cursor-pointer" />
-                                        <span className="ml-2">SignIn</span>
+                                    <Button className="flex items-center" onClick={handleProfileClick}>
+                                        <FaUser className="text-black cursor-pointer" />
+                                        <span className="ml-2">User Profile</span>
                                     </Button>
                                 </DropdownMenuLabel>
-                            )}
-                            {isLoggedIn && (
-                                <>
-                                    <DropdownMenuLabel>
-                                        <Button className="flex items-center" onClick={handleProfileClick}>
-                                            <FaUser className="text-black cursor-pointer" />
-                                            <span className="ml-2">User Profile</span>
-                                        </Button>
-                                    </DropdownMenuLabel>
-                                    <DropdownMenuLabel>
-                                        <Button className="flex items-center" onClick={handleLogoutClick}>
-                                            <FaSignOutAlt className="text-black cursor-pointer" />
-                                            <span className="ml-2">Logout</span>
-                                        </Button>
-                                    </DropdownMenuLabel>
-                                </>
-                            )}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                                <DropdownMenuLabel>
+                                    <Button className="flex items-center" onClick={handleLogoutClick}>
+                                        <FaSignOutAlt className="text-black cursor-pointer" />
+                                        <span className="ml-2">Logout</span>
+                                    </Button>
+                                </DropdownMenuLabel>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    )}
                 </div>
             </div>
         </div>
