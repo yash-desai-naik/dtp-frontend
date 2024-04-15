@@ -1,6 +1,5 @@
-import AddOrganization from "@/components/AddOrganization";
+import AddOrganization from "@/layouts/AddOrganization";
 import CustomTable from "@/components/CustomTable";
-import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 
 function Organization() {
@@ -28,9 +27,6 @@ function Organization() {
         <div>
           <CustomTable headers={tableHeaders} data={tableData} />
         </div>
-      </div>
-      <div>
-        <Footer />
       </div>
     </div>
   );

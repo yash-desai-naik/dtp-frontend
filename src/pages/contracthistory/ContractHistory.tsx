@@ -1,6 +1,5 @@
-import Footer from "@/components/Footer";
+import CustomButton from "@/components/CustomButton";
 import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 function ContractHistory() {
@@ -16,11 +15,8 @@ function ContractHistory() {
         </div>
         <div className="flex w-full max-w-sm items-center space-x-2 px-10">
           <Input type="" placeholder="Enter Contract ID" className="w-72" />
-          <Button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">Show History</Button>
+          <CustomButton text="Show History" />
         </div>
-      </div>
-      <div>
-        <Footer />
       </div>
     </div>
   );

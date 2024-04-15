@@ -1,17 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "./ui/input";
+import CustomButton from "./CustomButton";
 
 
 function ComboInput({ buttonName, title, label, submitButton }:{buttonName:string, title:string, label:string, submitButton:string}) {
-
-    const handleSubmit = () => {
-        // Handle submission
-    };
-
-    const handleCancel = () => {
-    };
 
     return (
         <Dialog>
@@ -33,8 +26,8 @@ function ComboInput({ buttonName, title, label, submitButton }:{buttonName:strin
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button type="submit" variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5" onClick={handleSubmit}>{submitButton}</Button>
-                    <Button type="button" variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5" onClick={handleCancel}>Cancel</Button>
+                    <CustomButton text={submitButton} />
+                    <CustomButton text="Cancle" />
                 </DialogFooter>
             </DialogContent>
         </Dialog>

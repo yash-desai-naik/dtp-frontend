@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import AddUser from "@/components/AddUser";
+import AddUser from "@/layouts/AddUser";
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
-import Footer from '@/components/Footer';
+import CustomButton from '@/components/CustomButton';
 
 function Admin() {
 
@@ -71,9 +71,6 @@ function Admin() {
         <div>
           <CustomTable headers={tableHeaders} data={tableData} />
         </div>
-      </div>
-      <div>
-        <Footer />
       </div>
     </div>
   );
