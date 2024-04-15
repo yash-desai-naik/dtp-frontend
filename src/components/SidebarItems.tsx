@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { FaChartBar, FaHistory, FaInfoCircle, FaUser, FaUserShield, FaUsers, FaCheckCircle } from 'react-icons/fa';
+import { FaChartBar, FaCheckCircle, FaHistory, FaUser, FaUsers } from 'react-icons/fa';
 import { Link, useLocation } from "react-router-dom";
 
 export const SidebarItems = () => {
@@ -7,12 +7,10 @@ export const SidebarItems = () => {
     const [selectedItem, setSelectedItem] = useState(getSelectedItem(location.pathname));
 
     function getSelectedItem(pathname: string) {
-        if (pathname === "/about") return "about";
         if (pathname === "/dashboard") return "dashboard";
         if (pathname === "/admin") return "admin";
         if (pathname === "/organizations") return "organizations";
         if (pathname === "/contracthistory") return "contractHistory";
-        if (pathname === "/userprofile") return "userProfile";
         if (pathname === "/verify") return "verify";
         return null;
     }
@@ -34,12 +32,6 @@ export const SidebarItems = () => {
             </div>
             <div className={`py-4 ${selectedItem === 'contractHistory' ? 'font-bold' : ''}`}>
                 <Link to="/contracthistory" onClick={() => handleItemClick('contractHistory')}><span className='flex items-center gap-3'><FaHistory /> Contract History</span></Link>        
-            </div>
-            <div className={`py-4 ${selectedItem === 'userProfile' ? 'font-bold' : ''}`}>
-                <Link to="/userprofile" onClick={() => handleItemClick('userProfile')}><span className='flex items-center gap-3'><FaUserShield/> User Profile</span></Link>        
-            </div>
-            <div className={`py-4 ${selectedItem === 'about' ? 'font-bold' : ''}`}>
-                <Link to="/about" onClick={() => handleItemClick('about')}><span className='flex items-center gap-3'><FaInfoCircle/> About </span></Link>        
             </div>
             <div className={`py-4 ${selectedItem === 'verify' ? 'font-bold' : ''}`}>
                 <Link to="/verify" onClick={() => handleItemClick('verify')}><span className='flex items-center gap-3'><FaCheckCircle/> Verify </span></Link>        

@@ -1,6 +1,5 @@
-import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import Verify from "@/components/Verify"
+import Verify from "@/layouts/Verify"
 
 function VerifyPage() {
 
@@ -16,9 +15,6 @@ function VerifyPage() {
                 <Verify buttonName="Verify" title="Verify" />
               </div>
             </div>
-          </div>
-          <div>
-            <Footer />
           </div>
         </div>
       );

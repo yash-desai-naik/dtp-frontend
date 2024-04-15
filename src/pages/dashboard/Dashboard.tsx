@@ -1,68 +1,15 @@
-import AddLotDialog from "@/components/AddLotDialog";
-import ComboInput from "@/components/ComboInput";
+import AddLotDialog from "@/layouts/AddLotDialog";
+import CustomDropdownMenu from "@/components/CustomDropdownMenu";
 import CustomTable from "@/components/CustomTable";
-import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import View from "@/components/View";
-import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { MoreHorizontal } from "lucide-react";
+import View from "@/layouts/View";
 
 function Dashboard() {
 
     const tableHeaders = ["PRODUCT", "VENDOR", "AGREEMENTTYPE", "DOCUMENT", ""];
     const tableData = [
-        ["Product 1", "pradip", "My order", (
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="h-8 w-8 p-0">
-                        <span className="sr-only">Open menu</span>
-                        <MoreHorizontal className="h-4 w-4" />
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="bg-white">
-                    <DropdownMenuLabel><ComboInput buttonName="Upload Bill" title="Upload Bill" label="Bill" submitButton="Submit Bill" /></DropdownMenuLabel>
-                    <DropdownMenuLabel><ComboInput buttonName="Upload ProofOfDelivery" title="Upload ProofOfDelivery" label="ProofOfDelivery" submitButton="Submit ProofOfDelivery" /></DropdownMenuLabel>
-                    <DropdownMenuLabel><ComboInput buttonName="Upload Invoice" title="Upload Invoice" label="Upload Invoice" submitButton="Submit Invoice" /></DropdownMenuLabel>
-                </DropdownMenuContent>
-            </DropdownMenu>
-        ), (
-                <View buttonName="View" />
-            )],
-            ["Product 1", "pradip", "My order", (
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
-                            <span className="sr-only">Open menu</span>
-                            <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="bg-white">
-                        <DropdownMenuLabel><ComboInput buttonName="Upload Bill" title="Upload Bill" label="Bill" submitButton="Submit Bill" /></DropdownMenuLabel>
-                        <DropdownMenuLabel><ComboInput buttonName="Upload ProofOfDelivery" title="Upload ProofOfDelivery" label="ProofOfDelivery" submitButton="Submit ProofOfDelivery" /></DropdownMenuLabel>
-                        <DropdownMenuLabel><ComboInput buttonName="Upload Invoice" title="Upload Invoice" label="Upload Invoice" submitButton="Submit Invoice" /></DropdownMenuLabel>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            ), (
-                <View buttonName="View" />
-                )],
-                ["Product 1", "pradip", "My order", (
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="h-8 w-8 p-0">
-                                <span className="sr-only">Open menu</span>
-                                <MoreHorizontal className="h-4 w-4" />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-white">
-                            <DropdownMenuLabel><ComboInput buttonName="Upload Bill" title="Upload Bill" label="Bill" submitButton="Submit Bill" /></DropdownMenuLabel>
-                            <DropdownMenuLabel><ComboInput buttonName="Upload ProofOfDelivery" title="Upload ProofOfDelivery" label="ProofOfDelivery" submitButton="Submit ProofOfDelivery" /></DropdownMenuLabel>
-                            <DropdownMenuLabel><ComboInput buttonName="Upload Invoice" title="Upload Invoice" label="Upload Invoice" submitButton="Submit Invoice" /></DropdownMenuLabel>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                ), (
-                    <View buttonName="View" />
-                    )],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
     ];
 
     return (
@@ -81,9 +28,6 @@ function Dashboard() {
             <div>
               <CustomTable headers={tableHeaders} data={tableData} />
             </div>
-          </div>
-          <div>
-            <Footer />
           </div>
         </div>
       );

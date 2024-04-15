@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import ViewLabel from "./ViewLabel";
+import ViewLabel from "../components/ViewLabel";
 
 function View({ buttonName }:{buttonName:string}) {
 

@@ -1,13 +1,11 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { SidebarItems } from "./components/SidebarItems";
 import { SidebarLayout } from "./layouts/SidebarLayout";
-import About from "./pages/about/About";
 import Admin from './pages/admin/Admin';
 import ContractHistory from "./pages/contracthistory/ContractHistory";
 import Dashboard from "./pages/dashboard/Dashboard";
 import LoginPage from "./pages/login/LoginPage";
 import Organization from "./pages/organizations/Organizations";
-import Profile from "./pages/profile/Profile";
 import Verify from "./pages/verify/VerifyPage";
 
 function App() {
@@ -16,12 +14,6 @@ function App() {
       <div>
         <Switch>
           <Route path="/login" component={LoginPage} />
-          <Route exact path="/about">
-            <SidebarLayout
-              sidebarContent={<SidebarItems />}
-              mainContent={<About />}
-            />
-          </Route>
           <Route exact path="/dashboard">
             <SidebarLayout
               sidebarContent={<SidebarItems />}
@@ -44,12 +36,6 @@ function App() {
             <SidebarLayout
               sidebarContent={<SidebarItems />}
               mainContent={<ContractHistory />}
-            />
-          </Route>
-          <Route exact path="/userprofile">
-            <SidebarLayout
-              sidebarContent={<SidebarItems />}
-              mainContent={<Profile />}
             />
           </Route>
           <Route exact path="/verify">
