@@ -49,13 +49,13 @@ function PageHeader({ title }: { title: string }) {
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="shadow-sm bg-white px-1 py-1">
                                 <DropdownMenuLabel>
-                                    <Button className="flex items-center" onClick={handleProfileClick}>
+                                    <Button className="flex hover:bg-blue-100 w-full" onClick={handleProfileClick}>
                                         <FaUser className="text-black cursor-pointer" />
                                         <span className="ml-2">User Profile</span>
                                     </Button>
                                 </DropdownMenuLabel>
                                 <DropdownMenuLabel>
-                                    <Button className="flex items-center" onClick={handleLogoutClick}>
+                                    <Button className="flex hover:bg-blue-100 w-full" onClick={handleLogoutClick}>
                                         <FaSignOutAlt className="text-black cursor-pointer" />
                                         <span className="ml-2">Logout</span>
                                     </Button>

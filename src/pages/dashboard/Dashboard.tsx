@@ -18,9 +18,9 @@ function Dashboard() {
             <PageHeader title="DASHBOARD" />
           </div>
           <div className="bg-white border border-white rounded-lg py-4 px-4 m-2" style={{ borderRadius: '0.5rem' }}>
-            <div className="flex justify-between items-center mb-1 py-4 px-10 bg-white">
-              <b>Add Lot</b>
-              <div>
+            <div className="flex justify-between items-center mb-1 py-4 bg-white">
+              <b className="text-lg px-2">Add Lot</b>
+              <div className="px-10">
                 <AddLotDialog buttonName="Add Lot" />
               </div>
             </div>

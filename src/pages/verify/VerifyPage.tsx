@@ -10,8 +10,8 @@ function VerifyPage() {
           </div>
           <div className="bg-white border border-white rounded-lg py-4 px-4 m-2" style={{ borderRadius: '0.5rem' }}>
             <div className="flex justify-between items-center mb-1 py-4 px-10 bg-white">
-              <b>Verify</b>
-              <div>
+              <b className="text-lg px-2">Verify</b>
+              <div className="px-10">
                 <Verify buttonName="Verify" title="Verify" />
               </div>
             </div>

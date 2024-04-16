@@ -1,14 +1,23 @@
+// CustomButton.tsx
+import React from 'react';
 import { Button } from './ui/button';
 
-function CustomButton(props:{text:string, cls?:string}) {
+interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  cls?: string;
+}
+
+const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(({ text, cls, onClick }, ref) => {
   return (
-    <Button 
-      variant="outline" 
-      className={props.cls??"bg-blue-500 hover:bg-blue-700 hover:text-red-500 text-white font-bold py-1 rounded px-5 transition-colors duration-300"}
+    <Button
+      ref={ref}
+      onClick={onClick}
+      variant="outline"
+      className={cls ?? "bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded px-5 transition-colors duration-300"}
     >
-      <span>{props.text}</span>
+      <span>{text}</span>
     </Button>
   );
-}
+});
 
 export default CustomButton;

@@ -1,17 +1,17 @@
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ViewLabel from "../components/ViewLabel";
+import CustomButton from "@/components/CustomButton";
 
-function View({ buttonName }:{buttonName:string}) {
+function View({ buttonName }: { buttonName: string }) {
 
     return (
         <Dialog>
-            <DialogTrigger asChild>
-                <Button variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">{buttonName}</Button>
+            <DialogTrigger>
+                <CustomButton text={buttonName} />
             </DialogTrigger>
             <DialogContent className="sm:max-w-[800px] bg-white overflow-y-auto max-h-[80vh]">
                 <DialogHeader>
-                    <DialogTitle>Lot Detail</DialogTitle><hr />
+                    <DialogTitle className="text-2xl">Lot Detail</DialogTitle><hr />
                 </DialogHeader>
 
                 <ViewLabel name="Product" label="Lot 2Some other Avocado" />
@@ -27,9 +27,9 @@ function View({ buttonName }:{buttonName:string}) {
                 <ViewLabel name="Confirm Quantity" label="10000" />
                 <ViewLabel name="Tax" label="" />
                 <ViewLabel name="Unit Of Measure" label="" />
-                
+
                 <DialogFooter>
-                    <Button type="button" variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">Cancel</Button>
+                    <CustomButton text="Cancel" />
                 </DialogFooter>
             </DialogContent>
         </Dialog>
