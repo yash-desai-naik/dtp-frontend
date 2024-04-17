@@ -10,7 +10,7 @@ function Verify({ buttonName, title, }: { buttonName: string, title: string }) {
         <Dialog>
 
             <DialogTrigger>
-                <CustomButton text={buttonName} cls="w-32 bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded transition-colors duration-300" />
+                <CustomButton text={buttonName} />
             </DialogTrigger>
 
             <DialogContent className="sm:max-w-[800px] bg-white">
