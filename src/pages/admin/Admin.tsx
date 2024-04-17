@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import AddUser from "@/layouts/AddUser";
+import CustomButton from '@/components/CustomButton';
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import CustomButton from '@/components/CustomButton';
+import AddUser from "@/layouts/AddUser";
+import { useState } from 'react';
 
 function Admin() {
 
@@ -46,13 +45,12 @@ function Admin() {
     user.email,
     user.status,
     user.department,
-    <Button
-      key={index}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-      onClick={() => toggleStatus(index)}
-    >
-      {user.status === "active" ? "Deactivate" : "Activate"}
-    </Button>
+
+    <CustomButton text={user.status === "active" ? "Deactivate" : "Activate"}
+                  key={index}
+                  onClick={() => toggleStatus(index)}
+                  cls="bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded px-5 transition-colors duration-300 w-24"
+    />
   ]));
 
   return (
@@ -61,9 +59,9 @@ function Admin() {
         <PageHeader title="ADMIN" />
       </div>
       <div className="bg-white border border-white rounded-lg py-4 px-4 m-2" style={{ borderRadius: '0.5rem' }}>
-        <div className="flex justify-between items-center mb-1 py-4 px-10 bg-white">
-          <b>Add Lot</b>
-          <div>
+        <div className="flex justify-between items-center mb-1 py-4  bg-white">
+          <b className="text-lg px-2">Add User</b>
+          <div className='px-10'>
             <AddUser buttonName="Add User" />
           </div>
         </div>

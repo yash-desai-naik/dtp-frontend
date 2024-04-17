@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ComboBox from "../components/ComboBox";
 import CustomButton from "../components/CustomButton";
@@ -8,9 +7,8 @@ function AddLotDialog({ buttonName }:{buttonName: string}) {
 
     return (
         <Dialog>
-            <DialogTrigger asChild>
-                <Button variant="outline" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 rounded px-5">{buttonName}</Button>
-                {/* <CustomButton text={buttonName} /> */}
+            <DialogTrigger>
+                <CustomButton text={buttonName} cls="w-32 bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded transition-colors duration-300" />
             </DialogTrigger>
             <DialogContent className="sm:max-w-[800px] bg-white">
                 <DialogHeader>
@@ -20,9 +18,9 @@ function AddLotDialog({ buttonName }:{buttonName: string}) {
                 <ComboBox label="Bank Id" value={["Bank #1"]} />
                 <ComboBox label="Wholesaler Id" value={["Wholesaler #1"]} />
                 <FileInput label="Select Excel" />
-                <DialogFooter>
+                <DialogFooter className="flex justify-center">
                     <CustomButton text="Upload" />
-                    <CustomButton text="Cancle" />
+                    <CustomButton text="Cancel" cls="text-blue-500 border rounded hover:text-white hover:bg-gray-400" />
                 </DialogFooter>
             </DialogContent>
         </Dialog>

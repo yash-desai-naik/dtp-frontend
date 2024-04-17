@@ -5,7 +5,7 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Check, ChevronsUpDown } from "lucide-react";
 import { SetStateAction, useState } from 'react';
 
-function DropDown({ value }:{value:[]}) {
+function DropDown({ value }:{value:string[]}) {
     const [open, setOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState('');
     const [itemSelected, setItemSelected] = useState(false);

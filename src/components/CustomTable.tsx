@@ -10,10 +10,10 @@ type TableData = TableDataRow[];
 interface CustomTableProps {
     headers: string[];
     data: TableData;
-  }
+}
 
 function CustomTable({ headers, data }:CustomTableProps) {
-    
+
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 5;
     const totalPages = Math.ceil(data.length / rowsPerPage);
@@ -42,9 +42,9 @@ function CustomTable({ headers, data }:CustomTableProps) {
                 </TableHeader>
                 <TableBody>
                     {currentRows.map((row, rowIndex) => (
-                        <TableRow key={rowIndex}>
+                        <TableRow key={rowIndex} className='hover:bg-blue-100'>
                             {row.map((cell, cellIndex) => (
-                                <TableCell key={cellIndex}>{cell}</TableCell>
+                                <TableCell key={cellIndex} className="w-1/4">{cell}</TableCell>
                             ))}
                         </TableRow>
                     ))}
@@ -60,6 +60,7 @@ function CustomTable({ headers, data }:CustomTableProps) {
                         size="sm"
                         onClick={handlePreviousPage}
                         disabled={currentPage === 1}
+                        className='hover:bg-gray-400'
                     >
                         Previous
                     </Button>
@@ -68,6 +69,7 @@ function CustomTable({ headers, data }:CustomTableProps) {
                         size="sm"
                         onClick={handleNextPage}
                         disabled={currentPage === totalPages}
+                        className='hover:bg-gray-400'
                     >
                         Next
                     </Button>
