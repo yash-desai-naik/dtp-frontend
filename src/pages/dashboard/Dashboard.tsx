@@ -3,28 +3,25 @@ import CustomDropdownMenu from "@/components/CustomDropdownMenu";
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
 import View from "@/layouts/View";
+import Verify from "@/layouts/Verify";
 
 function Dashboard() {
 
-    const tableHeaders = ["PRODUCT", "VENDOR", "AGREEMENTTYPE", "DOCUMENT", ""];
+    const tableHeaders = ["PRODUCT", "VENDOR", "AGREEMENTTYPE", "DOCUMENT", "", ""];
     const tableData = [
-        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
-        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
+        ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />, <Verify buttonName="Verify" title="Verify" />],
     ];
 
     return (
