@@ -49,7 +49,7 @@ function Admin() {
     <CustomButton text={user.status === "active" ? "Deactivate" : "Activate"}
                   key={index}
                   onClick={() => toggleStatus(index)}
-                  cls="bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded px-5 transition-colors duration-300 w-24"
+                  cls="bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold rounded transition-colors duration-300 w-24 text-center py-2 px-4"
     />
   ]));
 

@@ -8,7 +8,7 @@ function AddOrganization({ buttonName }:{buttonName: string}) {
     return (
         <Dialog>
             <DialogTrigger>
-            <CustomButton text={buttonName} cls="w-40 bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded transition-colors duration-300" />
+            <CustomButton text={buttonName} cls="bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-3 px-5 rounded transition-colors duration-300" />
             </DialogTrigger>
             <DialogContent className="sm:max-w-[800px] bg-white">
                 <DialogHeader>
@@ -18,7 +18,7 @@ function AddOrganization({ buttonName }:{buttonName: string}) {
                 <ComboBox label="Organization Type" value={["Transporter", "Bank", "Exporter", "DTP", "Wholseller"]} />
                 <DialogFooter>
                     <CustomButton text="Upload" />
-                    <CustomButton text="Cancel" cls="text-blue-500 border rounded hover:text-white hover:bg-gray-400" />
+                    <CustomButton text="Cancel" cls="text-blue-500 border rounded hover:text-white hover:bg-gray-400 px-4 py-2" />
                 </DialogFooter>
             </DialogContent>
         </Dialog>
