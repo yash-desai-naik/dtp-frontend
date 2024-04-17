@@ -1,23 +1,21 @@
-// CustomButton.tsx
 import React from 'react';
-import { Button } from './ui/button';
 
-interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface CustomButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
   cls?: string;
+  onClick?: () => void;
 }
 
-const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(({ text, cls, onClick }, ref) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ text, cls, onClick }) => {
   return (
-    <Button
-      ref={ref}
+    <div
       onClick={onClick}
-      variant="outline"
-      className={cls ?? "bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded px-5 transition-colors duration-300"}
+      className={`cursor-pointer ${cls ?? "bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-2 px-4 rounded transition-colors duration-300"}`}
+      style={{ whiteSpace: 'nowrap' }} // Added style to prevent text wrapping
     >
       <span>{text}</span>
-    </Button>
+    </div>
   );
-});
+};
 
 export default CustomButton;

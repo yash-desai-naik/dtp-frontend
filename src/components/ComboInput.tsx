@@ -27,7 +27,7 @@ function ComboInput({ buttonName, title, label, submitButton }:{buttonName:strin
                 </div>
                 <DialogFooter>
                     <CustomButton text={submitButton} />
-                    <CustomButton text="Cancel" cls="text-blue-500 border rounded hover:text-white hover:bg-gray-400" />
+                    <CustomButton text="Cancel" cls="text-blue-500 border rounded hover:text-white hover:bg-gray-400 px-4 py-2" />
                 </DialogFooter>
             </DialogContent>
         </Dialog>

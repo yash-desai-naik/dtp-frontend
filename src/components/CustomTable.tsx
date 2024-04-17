@@ -69,7 +69,7 @@ function CustomTable({ headers, data }:CustomTableProps) {
                         size="sm"
                         onClick={handleNextPage}
                         disabled={currentPage === totalPages}
-                        className='hover:bg-gray-400'
+                        className='hover:bg-gray-400 px-5'
                     >
                         Next
                     </Button>
