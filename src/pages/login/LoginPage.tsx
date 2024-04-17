@@ -1,14 +1,12 @@
-import { useForm } from 'react-hook-form';
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useStore } from '@/store/useStore';
-import { SubmitHandler } from 'react-hook-form';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
-import { useState } from 'react';
 import CustomButton from '@/components/CustomButton';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useStore } from '@/store/useStore';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 
 export default function LoginPage() {

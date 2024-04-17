@@ -13,7 +13,7 @@ function PageHeader({ title }: { title: string }) {
 
     const handleProfileClick = () => {
         // Redirect to profile page
-        <a href="#" />
+        <a href="#"></a>
     };
 
     const handleLoginClick = () => {
@@ -36,14 +36,10 @@ function PageHeader({ title }: { title: string }) {
                     <Input className="pl-10 bg-transparent rounded-full focus:outline-none border border-white" placeholder="Search..." style={{ color: 'white' }} />
                 </div>
                 <div className="px-3 rounded-full p-1 border border-white">
-                    {!isLoggedIn ? (
-                        <Button variant="ghost" className="h-8 w-8 p-0" onClick={handleLoginClick}>
-                            <FaSignInAlt className="text-white text-xl cursor-pointer" />
-                        </Button>
-                    ) : (
+                    {isLoggedIn && (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="h-8 w-8 p-0">
+                                <Button variant="ghost" className="h-8 w-8 p-2">
                                     <FaUser className="text-white text-xl cursor-pointer" />
                                 </Button>
                             </DropdownMenuTrigger>
@@ -51,7 +47,7 @@ function PageHeader({ title }: { title: string }) {
                                 <DropdownMenuLabel>
                                     <Button className="flex hover:bg-blue-100 w-full" onClick={handleProfileClick}>
                                         <FaUser className="text-black cursor-pointer" />
-                                        <span className="ml-2">User Profile</span>
+                                        <span className="ml-2">Profile</span>
                                     </Button>
                                 </DropdownMenuLabel>
                                 <DropdownMenuLabel>
@@ -62,6 +58,11 @@ function PageHeader({ title }: { title: string }) {
                                 </DropdownMenuLabel>
                             </DropdownMenuContent>
                         </DropdownMenu>
+                    )}
+                    {!isLoggedIn && (
+                        <Button variant="ghost" className="h-8 w-8 p-0" onClick={handleLoginClick}>
+                            <FaSignInAlt className="text-white text-xl cursor-pointer" />
+                        </Button>
                     )}
                 </div>
             </div>

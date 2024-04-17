@@ -11,6 +11,7 @@ import Verify from './pages/verify/VerifyPage';
 import { useStore } from './store/useStore';
 
 interface PrivateRouteProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: React.ComponentType<any>;
   path: string;
   exact?: boolean;

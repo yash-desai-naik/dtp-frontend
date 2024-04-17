@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import AddUser from "@/layouts/AddUser";
+import CustomButton from '@/components/CustomButton';
 import CustomTable from "@/components/CustomTable";
 import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import CustomButton from '@/components/CustomButton';
+import AddUser from "@/layouts/AddUser";
+import { useState } from 'react';
 
 function Admin() {
 

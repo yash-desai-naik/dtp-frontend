@@ -10,6 +10,21 @@ function Dashboard() {
     const tableData = [
         ["Product 1", "pradip", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
         ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
+        ["Product 2", "second", "My order", <CustomDropdownMenu />, <View buttonName="View" />],
     ];
 
     return (

@@ -8,7 +8,7 @@ function AddOrganization({ buttonName }:{buttonName: string}) {
     return (
         <Dialog>
             <DialogTrigger>
-            <CustomButton text={buttonName} cls="w-32 bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded transition-colors duration-300" />
+            <CustomButton text={buttonName} cls="w-40 bg-blue-700 hover:bg-blue-400 hover:text-white text-white font-bold py-1 rounded transition-colors duration-300" />
             </DialogTrigger>
             <DialogContent className="sm:max-w-[800px] bg-white">
                 <DialogHeader>
